@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Poppins, Nunito Sans, Montserrat, sans-serif;
+  background-image: url("./assets/alpes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+button{
+  cursor: pointer;
+}
+
+button:disabled{
+  cursor: default;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(10px, 1vw, 80px);
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  width: 40%;
+  box-shadow: lightgray 4px 4px 20px;
+  margin: 10px;
+  border-radius: 30px;
+  align-items: center;
+  padding: 10px;
+}

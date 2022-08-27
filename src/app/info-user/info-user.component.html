@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="card">
+    <div>Bienvenue {{userInfo.firstName | titlecase }} {{userInfo.lastName | titlecase }}</div>
+    <div *ngIf="(ipAdress$ | async) as ipAdress; else loading">Votre adresse IP est : {{ipAdress?.ip}}</div>
+    <ng-template #loading>Récupération de l'adresse IP en cours...</ng-template>
+    <div>Vous êtes né le {{userInfo.dateOfBirth | date: 'longDate'}}</div>
+    <div *ngIf="dayInCurrentYear === daysLeftBeforeBirthday">Bon anniversaire !</div>
+    <div *ngIf="dayInCurrentYear !== daysLeftBeforeBirthday && daysLeftBeforeBirthday !== 1">Plus que
+      {{daysLeftBeforeBirthday}} jours avant votre anniversaire !</div>
+    <div *ngIf="dayInCurrentYear !== daysLeftBeforeBirthday && daysLeftBeforeBirthday === 1">Plus que
+      {{daysLeftBeforeBirthday}} jour avant votre anniversaire !</div>
+  </div>
+</div>

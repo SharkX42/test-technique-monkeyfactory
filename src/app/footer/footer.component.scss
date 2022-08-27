@@ -1,0 +1,14 @@
+footer{
+  background-color: rgba(0, 0, 0, 0.47);;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
+
+footer img{
+  width: auto;
+  height: clamp(10px, 4vw, 80px);
+  padding: 10px;
+}
