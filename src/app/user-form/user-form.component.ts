@@ -25,7 +25,7 @@ export class UserFormComponent implements OnInit {
       dateOfBirth: [null, Validators.required]
     },
     {
-      updateOn: "blur"
+      updateOn: "change"
       }
     );
   }

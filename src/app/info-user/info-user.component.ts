@@ -19,18 +19,18 @@ export class InfoUserComponent implements OnInit {
   constructor(private userInfoService: UserInfoService, private router: Router) { }
 
   ngOnInit(): void {
-    //Récupération des informations du formulaire complété par l'utilisateur
+    //RÃ©cupÃ©ration des informations du formulaire complÃ©tÃ© par l'utilisateur
     this.userInfo = this.userInfoService.getUserInfo();
-    // Si l'utilisateur accède à la page 'informationsUser' manuellement, il est redirigé vers la page d'accueil
+    // Si l'utilisateur accÃ¨de Ã  la page 'informationsUser' manuellement, il est redirigÃ© vers la page d'accueil
     if(this.userInfo.lastName === undefined || this.userInfo.firstName === undefined || this.userInfo.dateOfBirth === undefined)
     {
       this.router.navigateByUrl('/');
     }
 
-    //Récupération de l'adresse IP de l'utilisateur
+    //RÃ©cupÃ©ration de l'adresse IP de l'utilisateur
     this.ipAdress$ = this.userInfoService.getIpAdressUserInfo();
 
-    this.dayInCurrentYear = this.daysInYear(new Date().getFullYear());
+    this.dayInCurrentYear = this.getDaysInYear(new Date().getFullYear());
 
     this.daysLeftBeforeBirthday = this.getNumberOfDaysLeftBeforeBirthday(this.userInfo.dateOfBirth)
   }
@@ -50,7 +50,7 @@ export class InfoUserComponent implements OnInit {
       (birthDayYearPlusOne.getTime() - today.getTime())/ oneDayInMillisecond);
   }
 
-  daysInYear(year: number) : number {
+  getDaysInYear(year: number) : number {
     return ((year % 4 === 0 && year % 100 > 0) || year %400 == 0) ? 366 : 365;
   }
 

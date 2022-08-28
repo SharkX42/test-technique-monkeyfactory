@@ -13,7 +13,7 @@
 
       <mat-form-field>
         <mat-label>Nom</mat-label>
-        <input matInput type="text" formControlName="lastName">
+        <input matInput id="lastName" type="text" formControlName="lastName">
         <mat-error *ngIf="userForm.get('lastName')?.hasError('pattern')">Le prénom de doit pas contenir de
           chiffre, d'espace ni de caractère spécial</mat-error>
         <mat-error *ngIf="userForm.get('lastName')!.hasError('required')">Obligatoire</mat-error>
@@ -21,7 +21,7 @@
 
       <mat-form-field>
         <mat-label>Date de naissance</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [max]="today">
+        <input matInput [matDatepicker]="picker" id="dateOfBirth" formControlName="dateOfBirth" [max]="today">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-hint>JJ/MM/AAAA</mat-hint>
@@ -35,7 +35,7 @@
       </mat-form-field>
 
       <div>
-        <button type="button" (click)="onSubmitForm()" [disabled]="userForm.invalid">Valider</button>
+        <button id="btnValid" type="button" (click)="onSubmitForm()" [disabled]="userForm.invalid">Valider</button>
       </div>
     </form>
   </div>
