@@ -35,6 +35,10 @@ export class InfoUserComponent implements OnInit {
     this.daysLeftBeforeBirthday = this.getNumberOfDaysLeftBeforeBirthday(this.userInfo.dateOfBirth)
   }
 
+  /**
+   * @param {Date} dateOfBirth  Date de naissance
+   * @returns Nombre de jours avant le prochain anniversaire
+   */
   getNumberOfDaysLeftBeforeBirthday(dateOfBirth: Date): number {
     const today: Date = new Date();
     const oneDayInMillisecond = 24 * 60 * 60 * 1000;
@@ -50,6 +54,10 @@ export class InfoUserComponent implements OnInit {
       (birthDayYearPlusOne.getTime() - today.getTime())/ oneDayInMillisecond);
   }
 
+  /**
+   * @param {number} year  Année
+   * @returns Nombre de jours dans l'année
+   */
   getDaysInYear(year: number) : number {
     return ((year % 4 === 0 && year % 100 > 0) || year %400 == 0) ? 366 : 365;
   }
